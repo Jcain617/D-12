@@ -3,6 +3,7 @@
   <head>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.45.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <div class="navbar bg-base-100">
@@ -83,18 +84,58 @@
       </ul>
       <section class="flex">
         <div class="card w-96 bg-base-100 shadow-xl image-full">
-            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <figure><img src="https://images.pexels.com/photos/2109800/pexels-photo-2109800.jpeg?cs=srgb&dl=pexels-enrique-grisales-2109800.jpg&fm=jpg&_gl=1*1y15dqp*_ga*NzU0MDI1NzEzLjE2NzE1NjA0MjQ.*_ga_8JE65Q40S6*MTY3MTU2MDQyNC4xLjEuMTY3MTU2MDQzOC4wLjAuMA.." alt="Shoes" /></figure>
             <div class="card-body">
-              <h2 class="card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <h2 class="card-title">Aquariums!</h2>
+              <p>There's something fishiee about this fish</p>
               <div class="card-actions justify-end">
                 <button class="btn btn-primary">Buy Now</button>
               </div>
             </div>
           </div>
       </section>
-    </main>
-     
+      <!--temperature chart-->
+      <canvas id="myChart" style="width:100%;max-width:700px" class="bg-white p-6"></canvas>
+
+<script>
+var yxValues = [
+  {y:78, x:7},
+  {y:78, x:8},
+  {y:78, x:8},
+  {y:80, x:9},
+  {y:80, x:9},
+  {y:80, x:9},
+  {y:79, x:10},
+  {y:79, x:11},
+  {y:79, x:12},
+  {y:77, x:13},
+  {y:77, x:14},
+  {y:75, x:15},
+];
+
+new Chart("myChart", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 4,
+      pointBackgroundColor: "rgb(0,0,255)",
+      data: yxValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      xAxes: [{ticks: {min: 5, max:20}}],
+      yAxes: [{ticks: {min: 70, max:85}}],
+    }
+  }
+});
+</script>
+</main>
+    
+    <!--trying somthing different-->
+    
+    
     <!--the side nav ends and the footer starts-->
 
     <footer class="footer footer-center p-4 bg-base-300 text-base-content fixed bottom-0">
